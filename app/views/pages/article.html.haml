@@ -1,0 +1,79 @@
+= render :partial => "layouts/header"
+.container
+  .row
+    .col-lg-12
+      .displayMagazine
+        %h1
+          = @doc.title
+      .mag-container
+        .magNav.btn-group.btn-group-justified
+          %a.magPrev{href: "#", class: "btn btn-default"}
+            %span{class: "icon icon-backward"}
+          %a.magZoom{href: "#", class: "btn btn-default"}
+            %span{class: "icon icon-zoom-in"}
+            %span.invisible{class: "icon icon-zoom-out"}
+          %a.magNext{href: "#", class: "btn btn-default"}
+            %span{class: "icon icon-forward"}
+        #magazine
+          - @doc.document_pages.order("number asc").each do |page|
+            %div{style: "background-image: #{page.page_image.url}"}
+              = image_tag(page.page_image.url)
+        .magControls.btn-group.btn-group-justified
+          %a.magPrev{href: "#", class: "btn btn-default"}
+            %span{class: "icon icon-backward"}
+          %a.magZoom{href: "#", class: "btn btn-default"}
+            %span{class: "icon icon-zoom-in"}
+            %span.invisible{class: "icon icon-zoom-out"}
+          %a.magNext{href: "#", class: "btn btn-default"}
+            %span{class: "icon icon-forward"}
+      -#
+        .magSlidePager
+          .form-inline
+            .form-group
+              %input{type: "number", id: "progress-value", min: "1", max: "40", class: "form-control", placeholder: "enter page number"}
+          .progress{data: {slider: "true"}}
+            .progress-bar.progress-bar-warning{role: "progressbar", aria: {valuemax: "40", valuemin: "1", valuenow: "1"}}
+        
+
+        
+:javascript
+  $(function(){
+  
+  	$("#magazine").turn({
+      display: "double",
+    	gradients: true,
+    	acceleration: true,
+    	duration: 1200,
+    	when: {
+    		turned: function(e, page){
+    			
+    		}
+    	}
+    });
+    
+
+    //var $p = $($(".progress")[0]);
+    //var $t = $($("#progress-value")[0]);
+    
+    //$p.on( "sliderchange", function(e,result){
+    //  var page = parseInt(result.value);
+    //  $t.val(page);
+    //  $("#magazine").turn("page", page);
+    //});
+            
+    $(window).bind('keydown', function(e){
+
+  		if (e.keyCode==37)
+  			$('#magazine').turn('previous');
+  		else if (e.keyCode==39)
+  			$('#magazine').turn('next');
+  		
+  		//if(e.keyCode == 13){
+  		//	var page = parseInt($($("#progress-value")[0]).val());
+  		//	$($(".progress")[0]).slider( "option", "now", page );
+  		//	$("#magazine").turn("page", page);
+  		//}
+  
+  	});
+    
+  });

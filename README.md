@@ -1,4 +1,0 @@
-IPG
-===
-
-IPG online magazine

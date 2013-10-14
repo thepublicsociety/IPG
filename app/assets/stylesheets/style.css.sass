@@ -1,0 +1,132 @@
+@font-face
+  font-family: 'symbols'
+  src: url('/fonts/icomoon.eot')
+  src: url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('/fonts/icomoon.woff') format('woff'), url('/fonts/icomoon.ttf') format('truetype'), url('/fonts/icomoon.svg#icomoon') format('svg')
+  font-weight: normal
+  font-style: normal
+body
+  line-height: 1.45
+  font-family: Lato
+  background: url(/assets/ticks.png)
+a:focus
+  outline: 0
+.symbols
+  font-family: symbols
+.clear
+  clear: both
+.messages
+  position: absolute
+  right: 0
+  top: 0
+  z-index: 99999999
+  right: 1px
+  top: 0px
+  background: black
+  display: none
+  .msg
+    color: white
+    padding: 10px 15px
+.unstyled
+  list-style: none
+  padding: 0
+  margin: 0
+.admin-form
+  textarea
+    width: 600px
+    height: 250px
+  .small-text
+    font-weight: 300
+    font-size: 10px
+.form-actions
+  padding: 20px 0
+  background: transparent
+  clear: both
+.control-group.boolean
+  label
+    float: left
+    margin-top: 10px
+    margin-right: 10px
+  .controls
+    float: left
+body.user, body.sessions
+  form
+    input[type=text], input[type=password], input[type=tel], input[type=email]
+      margin-bottom: 10px
+      width: 450px
+      padding: 5px
+      &:focus
+        outline: 0
+        box-shadow: none
+    label
+      margin-bottom: 10px
+body.user, body.sessions
+  form, h1, h2, h3, #wrapper > a, p
+    width: 66.6%
+    margin: 0 auto
+    display: block
+body.user, body.sessions
+  h1, h2, h3
+    margin-top: 60px
+.navbar
+  a
+    color: #333
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus
+  background-color: #666
+  background-image: -webkit-gradient(linear,left 0,left 100%,from(#666),to(#555))
+  background-image: -webkit-linear-gradient(top,#666,0%,#555,100%)
+  background-image: -moz-linear-gradient(top,#666 0,#555 100%)
+  background-image: linear-gradient(to bottom,#666 0,#555 100%)
+
+.search
+  width: 600px
+  margin: 50px auto 50px
+.displayMagazine
+  width: 100%
+  margin: 50px auto 50px
+  word-break: break-all
+.search,
+.displayMagazine
+  h1
+    background-clip: text
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 2px 3px, 0 -2px 2px rgba(0,0,0,0.25)
+    font-size: 86px
+    text-align: center
+    color: #ccc
+  input[type=text]
+    width: 400px
+    margin: 50px auto 0
+    display: block
+    padding: 6px 10px
+    &:focus
+      outline: 0
+#magazine
+  width: 1160px
+  height: 745px
+  margin: 0 auto
+  background-color: white
+  border-left: 2px solid #474949
+  border-right: 2px solid #474949
+  .page
+    background-color: #fff
+  img
+    width: 100%
+shadow
+  height: 100%
+  width: 100px
+  background-image: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.10) 50%,rgba(0,0,0,0) 100%)
+  position: absolute
+  top: 0
+  z-index: 9999
+  left: 50%
+  margin-left: -50px
+.mag-container
+  position: relative
+  overflow: hidden
+.invisible
+  display: none
+.bootstrap-slider
+  display: block
+  width: 80px
+  height: 20px
+  background-color: darkred
+  position: relative

@@ -1,0 +1,27 @@
+<%= simple_form_for(@document) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :category %>
+  </div>
+  <div id="file-uploader">
+    <noscript>
+      Please enable JavaScript to use file uploader
+    </noscript>
+  </div>
+  <script>
+    var uploader = new qq.FileUploader({
+      element: document.getElementById('file-uploader'),
+      action: '/add-image',
+      params: {
+        format: 'json',
+        id: '<%= params[:id] %>'
+      }
+    });
+  </script>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

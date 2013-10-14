@@ -1,0 +1,12 @@
+= render :partial => "layouts/header"
+.container
+  .row
+    .col-lg-12
+      .search
+        %h1
+          Search
+        = form_tag("/search", remote: true) do
+          = text_field_tag "query"
+  .row
+    .col-lg-12
+      .results

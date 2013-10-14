@@ -1,0 +1,4 @@
+%ul.unstyled
+  - @documents.each do |doc|
+    %li
+      = image_tag(doc.to_thumb)

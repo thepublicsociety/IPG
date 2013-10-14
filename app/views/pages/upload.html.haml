@@ -1,0 +1,11 @@
+= render :partial => "layouts/header"
+.container
+  .row
+    .col-lg-12
+      .upload.admin-form
+        = simple_form_for(@document, html: {multipart: true}) do |f|
+          %div{style: "height: 20px"}
+          = f.input :pdf
+          = f.input :image
+          %div{style: "height: 20px"}
+          = f.submit
